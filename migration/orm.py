@@ -38,6 +38,8 @@ class ORM:
     def get_fields(self, table):
         return self.env[table].fields_get().keys()
 
+    def write(self, table, id, vals):
+        return self.env[table].browse(id).write(vals)
 
     @staticmethod
     def rename_fields(self, data, name_map):

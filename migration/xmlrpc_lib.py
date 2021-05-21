@@ -57,7 +57,7 @@ class XmlrpcLib:
         current_offset = 0
         records = self.search_read(table, domain, fields=fields, limit=page_size, offset=current_offset)
         while True:
-            if current_offset != 0 and len(records) < page_size:
+            if current_offset != 0 and len(records) == 0:
                 return
             yield records
             current_offset += page_size
